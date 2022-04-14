@@ -1,0 +1,31 @@
+{
+  "name": "backendapi",
+  "version": "1.0.0",
+  "description": "(index) loader.js",
+  "main": "backend-api-node.js",
+  "scripts": {
+    "test": "echo"
+  },
+  "repository": {
+    "type": "git",
+    "url": "danylochi"
+  },
+  "keywords": [
+    "^c"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "express": "^4.17.3",
+    "express-query-int": "^3.0.0",
+    "lodash": "^4.17.21",
+    "mongoose": "^4.13.21",
+    "mongoose-paginate": "^5.0.3",
+    "node-restful": "^0.2.6",
+    "pm2": "^5.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
