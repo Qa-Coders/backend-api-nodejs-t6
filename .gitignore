@@ -1,0 +1,8 @@
+# Não sobre os módulos
+node_modules
+
+# Não sobre os arquivos de Log
+*.log
+
+# Não sobre o package-lock.jason
+package--lok.jason
