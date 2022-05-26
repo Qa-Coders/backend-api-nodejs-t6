@@ -1,19 +1,14 @@
 {
-  "name": "backendapi",
+  "name": "backend-api-t6",
   "version": "1.0.0",
-  "description": "(index) loader.js",
-  "main": "backend-api-node.js",
+  "description": "",
+  "main": "loader.js",
   "scripts": {
-    "test": "echo"
+    "dev": "nodemon",
+    "production":"pm2 start loader.js --name backend-api-t6"
   },
-  "repository": {
-    "type": "git",
-    "url": "danylochi"
-  },
-  "keywords": [
-    "^c"
-  ],
-  "author": "",
+  
+  "author": "William A. da Silva",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.0",
