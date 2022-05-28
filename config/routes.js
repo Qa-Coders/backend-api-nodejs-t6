@@ -7,9 +7,9 @@ module.exports = function(server) {
     server.use('/status', (req, res) => 
         res.send(`BACKEND is runner.`));
     
-        server.use(express.static(require('path').join(__dirname, '../public')));
-
-
-
+    const register = require('../api/registerService');
+    register.register(protectedAPI, '/register')   
+        
+    server.use(express.static(require('path').join(__dirname, '../public')));
 }
 
