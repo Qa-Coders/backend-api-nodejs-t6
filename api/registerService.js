@@ -1,6 +1,6 @@
 const _ = require('lodash')
 const Register = require('./register')
-const fullNameRegex = /^[A-ZÀ-Ÿ][A-zÀ-ÿ']+\s([A-zÀ-ÿ']\s?)*[A-ZÀ-Ÿ][A-zÀ-ÿ']+$/
+const fullNameRegex = /^[A-ZÀ-Ÿ][A-zÀ-ÿ']+\s([A-zÀ-ÿ']\s?)*[A-ZÀ-Ÿ][A-zÀ-ÿ']+$/;
 const mailRegex = /\S+@\S+\.\S+/;
 
 
@@ -21,7 +21,7 @@ function sendErrorsOrNext(req, res, next) {
     }
 }
 
-function ParseErrors(nodeRestfulErrors){
+function parseErrors(nodeRestfulErrors){
     const errors = []
     _.forIn(nodeRestfulErrors, error => errors.push(error.message))
     return errors
@@ -32,6 +32,7 @@ const sendErrorsFromDB = function(res,dbErrors) {
     _.forIn(dbErrors.errors, error => errors.push(error.message))
     return res.status(400).json({ errors })
 }
+
 
 function register(req, res, next){
     const fullName = req.body.fullName || ''
@@ -49,11 +50,11 @@ function register(req, res, next){
     if(!fullName.match(fullNameRegex)){
         return res.status(400).send({ alert: ["Infome o nome e o sobrenome."] })
     }
-
+   
     if(cpf == null || cpf == ""){
         return res.status(400).send({ alert: ["O Campo CPF é Obrigatório."] })
     }
-
+  
     if(mail == null || mail == ""){
         return res.status(400).send({ alert: ["O Campo E-mail é Obrigatório."] })
     }

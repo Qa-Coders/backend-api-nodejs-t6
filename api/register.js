@@ -1,15 +1,16 @@
+const { Model } = require('mongoose')
 const beautifulUnique = require('mongoose-beautiful-unique-validation');
 const restful = require('node-restful');
 const mongoose = restful.mongoose
 
 const registerSchema = new mongoose.Schema({ 
-    fullName: { type: String, require: true, unique: true},
-    cpf: { type: String, require: true},
-    mail: { type: String, require: true},
-    phone: { type: String, require: false},
-    address: { type: String, require:true},
-    number: { type: Number, require: false},
-    complement: { type: String, require: false}
+    fullName: { type: String, required: true},
+    cpf: { type: String, required: true},
+    mail: { type: String, required: true},
+    phone: { type: String, required: false},
+    address: { type: String, required:true},
+    number: { type: Number, required: false},
+    complement: { type: String, required: false}
 })
 
 registerSchema.plugin(beautifulUnique)
