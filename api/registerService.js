@@ -1,7 +1,7 @@
 const _ = require('lodash')
 const Register = require('./register')
-const fullNameRegex = (/^[A-ZÀ-Ÿ][A-zÀ-ÿ']+\s([A-zÀ-ÿ']\s?)*[A-ZÀ-Ÿ][A-zÀ-ÿ']+$/)
-const mailRegex = (/\S+@\S+\.\S+/)
+const fullNameRegex = /^[A-ZÀ-Ÿ][A-zÀ-ÿ']+\s([A-zÀ-ÿ']\s?)*[A-ZÀ-Ÿ][A-zÀ-ÿ']+$/;
+const mailRegex = /\S+@\S+\.\S+/;
 
 Register.methods(['get', 'post', 'put', 'delete'])
 Register.updateOptions({ new: true, runValidators: true })
@@ -54,7 +54,7 @@ function register(req, res, next) {
     if(!mail.match(mailRegex)){
         return res.status(400).send({ alert: ["O e-mail informado é inválido. Informe um e-mail no formato [nome@domínio.com ou nome@domínio.com.br]."] })
     }
-
+    
     const newBody = new Register({
         fullName,
         mail,

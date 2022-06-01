@@ -1,6 +1,6 @@
 const { model } = require('mongoose')
-const beautfulUnique = require('mongoose-beautful-unique-validation')
-const restful = require('node-restful')
+const beautifulUnique = require('mongoose-beautful-unique-validation');
+const restful = require('node-restful');
 const mongoose = restful.mongoose
 
 const registerSchema = new mongoose.Schema({
@@ -12,6 +12,6 @@ const registerSchema = new mongoose.Schema({
     complement: { type: String, required: false }
 })
 
-registerSchema.plugin(beautfulUnique)
+registerSchema.plugin(beautifulUnique)
 
 module.exports = restful.model('Register', registerSchema)

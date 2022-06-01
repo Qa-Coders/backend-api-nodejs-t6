@@ -1,10 +1,10 @@
-const { lazrouter } = require('express/lib/application')
+const { lazyrouter } = require('express/lib/application')
 const mongoose = require('mongoose')
 const args = require('args-parser')(process.argv)
 mongoose.Promise = require('Bluebird')
 
 if (args.production)
-    module.exports = mongoose.connect('mongodb://nome_banco:senha_do_banco@servidor.com.br:27017/usuario')
+    module.exports = mongoose.connect('mongodb://nome_banco:senha_do_banco@servidor.com.br:27017/usuario', { useNewUrlParser: true } )
 else
     module.exports = mongoose('mongodb://localhost/banco_dadosT6')
     
