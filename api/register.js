@@ -1,7 +1,7 @@
+const { model } = require('mongoose')
 const beautfulUnique = require('mongoose-beautful-unique-validation')
 const restful = require('node-restful')
-
-const mongoose = restul.mongoose
+const mongoose = restful.mongoose
 
 const registerSchema = new mongoose.Schema({
     fullName: { type: String, required: true },
